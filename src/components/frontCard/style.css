@@ -1,0 +1,94 @@
+.darkmode-front {
+  height: 382px;
+  width: 645px;
+  /* scale: 150% */
+}
+
+.darkmode-front .overlap-group {
+  height: 382px;
+  position: relative;
+  
+}
+
+.darkmode-front .background {
+  background-color: #161616;
+  border-radius: 43px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 640px;
+  height: 382px;
+}
+
+.darkmode-front .bottom-line {
+  height: 74px;
+  left: 282px;
+  position: absolute;
+  top: 144px;
+  width: 303px;
+}
+
+.darkmode-front .upper-line {
+  height: 34px;
+  left: 66px;
+  position: absolute;
+  top: 99px;
+  width: 234px;
+}
+
+.darkmode-front .text-wrapper {
+  color: #e1e1e1;
+  font-family: "Orbitron", Helvetica;
+  font-size: 13px;
+  font-weight: 700;
+  left: 295px;
+  letter-spacing: 4.16px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 197px;
+  width: 297px;
+}
+
+.darkmode-front .div {
+  color: #4e52b1;
+  font-family: "Orbitron", Helvetica;
+  font-size: 70px;
+  font-weight: 700;
+  left: 62px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 24px;
+  width: 583px;
+}
+
+.darkmode-front .text-wrapper-2 {
+  color: #e1e1e1;
+  font-family: "Orbitron", Helvetica;
+  font-size: 70px;
+  font-weight: 400;
+  left: 302px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 90px;
+  white-space: nowrap;
+  width: 303px;
+}
+
+.darkmode-front .bottom-icons {
+  height: 29px;
+  left: 30px;
+  position: absolute;
+  top: 332px;
+  width: 575px;
+}
+
+.darkmode-front .wired-profile {
+  height: 158px;
+  left: 83px;
+  position: absolute;
+  top: 161px;
+  width: 181px;
+}

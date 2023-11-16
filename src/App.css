@@ -1,0 +1,14 @@
+.App {
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: local('Orbitron'), url(./fonts/Orbitron/Orbitron-Regular.ttf) format('truetype');
+}
