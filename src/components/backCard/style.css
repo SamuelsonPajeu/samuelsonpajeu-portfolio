@@ -1,0 +1,103 @@
+.darkmode-back {
+  background-color: #161616;
+  border-radius: 43px;
+  height: 382px;
+  width: 640px;
+}
+
+.darkmode-back .overlap-group {
+  background-color: #161616;
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-color: #4e52b1;
+  border-left-style: solid;
+  border-left-width: 17px;
+  border-radius: 47px;
+  height: 327px;
+  left: 30px;
+  position: relative;
+  top: 29px;
+  width: 581px;
+}
+
+.darkmode-back .overlap {
+  height: 48px;
+  left: 28px;
+  position: absolute;
+  top: 271px;
+  width: 524px;
+}
+
+.darkmode-back .SAMUELSON-PAJEU {
+  color: #e1e1e1;
+  font-family: "Orbitron", Helvetica;
+  font-size: 13px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 6.11px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 2px;
+  width: 524px;
+}
+
+.darkmode-back .text-wrapper {
+  color: #4e52b1;
+  font-family: "Orbitron", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  left: 288px;
+  letter-spacing: 7.52px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 54px;
+}
+
+.darkmode-back .rectangle {
+  background-image: url(../../../public/assets/img/vector-2.svg);
+  background-size: 100% 100%;
+  height: 120px;
+  left: 67px;
+  position: absolute;
+  top: 25px;
+  width: 120px;
+}
+
+.darkmode-back .linkedin-circled {
+  height: 96px;
+  left: 9px;
+  position: absolute;
+  top: 11px;
+  width: 95px;
+}
+
+.darkmode-back .git-hub-wrapper {
+  background-image: url(../../../public/assets/img/vector-2.svg);
+  background-size: 100% 100%;
+  height: 120px;
+  left: 239px;
+  position: absolute;
+  top: 25px;
+  width: 120px;
+}
+
+.darkmode-back .img {
+  height: 90px;
+  left: 15px;
+  position: absolute;
+  top: 15px;
+  width: 90px;
+}
+
+.darkmode-back .qr-code-wrapper {
+  background-image: url(../../../public/assets/img/vector-2.svg);
+  background-size: 100% 100%;
+  height: 120px;
+  left: 410px;
+  position: absolute;
+  top: 25px;
+  width: 120px;
+}
