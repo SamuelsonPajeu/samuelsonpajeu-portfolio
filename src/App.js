@@ -1,11 +1,11 @@
-import { React, useRef, useEffect } from "react";
+import { React, useState, useRef, useEffect } from "react";
+import Grid from '@mui/material/Grid';
 import './App.css';
 
 
 import Tilt from 'react-parallax-tilt';
 import FrontCard from './components/frontCard/FrontCard.js';
 import BackCard from './components/backCard/BackCard.js';
-
 
 const getScaling = (scaledContent) => {
   scaledContent.style.transform = 'scale(1.25, 1.25)';
@@ -50,6 +50,7 @@ const applyScaling = (scaledContent) => {
 
 function App() {
   const scaledContent = useRef();
+  const [cardSide, setCardSide] = useState('front');
 
   // function handleTilt(event){
   //   if (scaledContent.current){
@@ -84,19 +85,53 @@ function App() {
   })
 
   return (
-    <div className="App">
+    <div className="App" >
+
       <div ref={scaledContent}
         // onMouseMove={(event) => handleTilt(event)}
         // onMouseOut={() => handleMouseOut()}
       >
-        <Tilt 
-          tiltReverse = {false}
-          tiltMaxAngleX = {10}
-          tiltMaxAngley = {5}
+        <Grid container spacing={2}
+          alignItems="center"
+          direction="row"
+          justifyContent="space-between"
         >
-          <FrontCard />
-          {/* <BackCard  /> */}
-        </Tilt>
+          {cardSide === 'back' && (
+          <Grid item xs>
+            <div className="flip-arrow-left-wrapper">
+              <img className="app-img" alt="Flip Arrow Left" src="assets/img/flip-arrow.svg" 
+                onClick={() => {
+                  setCardSide('front');
+                }}
+              />
+            </div>
+          </Grid>
+          )}
+          <Grid item xs>
+            <div className="center-card">
+              <Tilt 
+                tiltReverse = {false}
+                tiltMaxAngleX = {10}
+                tiltMaxAngley = {5}
+              >
+                {cardSide === 'front' &&(<FrontCard />)}
+                {cardSide === 'back' &&(<BackCard />)}
+              </Tilt>
+            </div>
+          </Grid>
+          {cardSide === 'front' && (
+            <Grid item xs>
+              <div className="flip-arrow-right-wrapper">
+                <img className="app-img" alt="Flip Arrow Right" src="assets/img/flip-arrow.svg" 
+                onClick={() => {
+                  setCardSide('back');
+                }}
+                />
+              </div>
+            </Grid>
+          )}
+          
+        </Grid>
         
       </div>
     </div>
