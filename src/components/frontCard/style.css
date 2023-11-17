@@ -1,23 +1,16 @@
 .darkmode-front {
+  background-color: #161616;
+  border-radius: 43px;
   height: 382px;
-  width: 645px;
-  /* scale: 150% */
+  width: 640px;
+  overflow: hidden;
+  transform-style: preserve-3d;
 }
 
 .darkmode-front .overlap-group {
   height: 382px;
   position: relative;
   
-}
-
-.darkmode-front .background {
-  background-color: #161616;
-  border-radius: 43px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 640px;
-  height: 382px;
 }
 
 .darkmode-front .bottom-line {
@@ -48,6 +41,7 @@
   text-align: center;
   top: 197px;
   width: 297px;
+  cursor: default;
 }
 
 .darkmode-front .div {
@@ -59,6 +53,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
+  cursor: default;
   top: 24px;
   width: 583px;
 }
@@ -75,6 +70,7 @@
   top: 90px;
   white-space: nowrap;
   width: 303px;
+  cursor: default;
 }
 
 .darkmode-front .bottom-icons {

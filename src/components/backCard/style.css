@@ -42,6 +42,7 @@
   text-align: center;
   top: 2px;
   width: 524px;
+  cursor: default;
 }
 
 .darkmode-back .text-wrapper {
@@ -56,6 +57,8 @@
   text-align: center;
   top: 0;
   width: 54px;
+  overflow: hidden;
+  cursor: default;
 }
 
 .darkmode-back .rectangle {
@@ -66,6 +69,7 @@
   position: absolute;
   top: 25px;
   width: 120px;
+  overflow: hidden;
 }
 
 .darkmode-back .linkedin-circled {
@@ -74,6 +78,7 @@
   position: absolute;
   top: 11px;
   width: 95px;
+  overflow: hidden;
 }
 
 .darkmode-back .git-hub-wrapper {
@@ -84,6 +89,7 @@
   position: absolute;
   top: 25px;
   width: 120px;
+  overflow: hidden;
 }
 
 .darkmode-back .img {
@@ -92,6 +98,7 @@
   position: absolute;
   top: 15px;
   width: 90px;
+  overflow: hidden;
 }
 
 .darkmode-back .qr-code-wrapper {

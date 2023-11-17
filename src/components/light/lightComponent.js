@@ -3,8 +3,8 @@ import "./style.css";
 
 
 const updatePosition = (mouseEvent, lightComponent) => {
-  const innerX = mouseEvent.clientX / 3;
-  const innerY = mouseEvent.clientY / 3;
+  const innerX = mouseEvent.clientX / 2;
+  const innerY = mouseEvent.clientY / 2;
   
   lightComponent.style.left = innerX + "px";
   lightComponent.style.top = innerY + "px";

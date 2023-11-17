@@ -1,7 +1,9 @@
 import { React, useRef, useEffect } from "react";
 import './App.css';
 
-// import FrontCard from './components/frontCard/FrontCard.js';
+
+import Tilt from 'react-parallax-tilt';
+import FrontCard from './components/frontCard/FrontCard.js';
 import BackCard from './components/backCard/BackCard.js';
 
 
@@ -23,44 +25,46 @@ const applyScaling = (scaledContent) => {
   scaledContent.style.transform = getScaling(scaledContent);
 };
 
-const applyTilt = (tiltedContent, mouseEvent, ) => {
-  const innerX = mouseEvent.clientX - tiltedContent.offsetLeft;
-  const innerY = mouseEvent.clientY - tiltedContent.offsetTop;
+ // Tilt did manually before I found the react-parallax-tilt library
 
-  const x = tiltedContent.offsetWidth / 2;
-  const y = tiltedContent.offsetHeight / 2;
+// const applyTilt = (tiltedContent, mouseEvent, ) => {
+//   const innerX = mouseEvent.clientX - tiltedContent.offsetLeft;
+//   const innerY = mouseEvent.clientY - tiltedContent.offsetTop;
 
-  const intensityX = 8;
-  const intensityY = 3;
+//   const x = tiltedContent.offsetWidth / 2;
+//   const y = tiltedContent.offsetHeight / 2;
 
-  let convertX = ((innerX - x) * intensityX / x);
-  let convertY = ((innerY - y) * intensityY / y);
+//   const intensityX = 8;
+//   const intensityY = 3;
 
-  tiltedContent.style.transform = `
-  rotateY(${convertX * -1}deg)
-  rotateX(${convertY}deg)
-  ${getScaling(tiltedContent)}
-  `
+//   let convertX = ((innerX - x) * intensityX / x);
+//   let convertY = ((innerY - y) * intensityY / y);
 
-}
+//   tiltedContent.style.transform = `
+//   rotateY(${convertX * -1}deg)
+//   rotateX(${convertY}deg)
+//   ${getScaling(tiltedContent)}
+//   `
+
+// }
 
 function App() {
   const scaledContent = useRef();
 
-  function handleTilt(event){
-    if (scaledContent.current){
-      applyTilt(scaledContent.current, event);
-    }
-  }
+  // function handleTilt(event){
+  //   if (scaledContent.current){
+  //     applyTilt(scaledContent.current, event);
+  //   }
+  // }
 
-  function handleMouseOut(){
-    if(scaledContent.current){
-      scaledContent.current.style.transform = `
-      rotateY(0deg)
-      ${getScaling(scaledContent.current)}
-      `
-    }
-  }
+  // function handleMouseOut(){
+  //   if(scaledContent.current){
+  //     scaledContent.current.style.transform = `
+  //     rotateY(0deg)
+  //     ${getScaling(scaledContent.current)}
+  //     `
+  //   }
+  // }
 
   useEffect(() => {
     function handleResize(){
@@ -82,11 +86,18 @@ function App() {
   return (
     <div className="App">
       <div ref={scaledContent}
-        onMouseMove={(event) => handleTilt(event)}
-        onMouseOut={() => handleMouseOut()}
+        // onMouseMove={(event) => handleTilt(event)}
+        // onMouseOut={() => handleMouseOut()}
       >
-        {/* <FrontCard /> */}
-        <BackCard  />
+        <Tilt 
+          tiltReverse = {false}
+          tiltMaxAngleX = {10}
+          tiltMaxAngley = {5}
+        >
+          <FrontCard />
+          {/* <BackCard  /> */}
+        </Tilt>
+        
       </div>
     </div>
   );
