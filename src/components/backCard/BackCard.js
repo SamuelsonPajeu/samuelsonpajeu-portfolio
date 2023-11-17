@@ -1,12 +1,24 @@
 
-import React from "react";
+import { React, useRef, useState } from "react";
 import "./style.css";
 
+import LightComponent from '../light/lightComponent.js';
+
+
 function BackCard() {
+const [light, setLight] = useState(false);
+const cardComponent = useRef();
+
 return (
-  <div className="darkmode-back">
+  <div ref={cardComponent} className="darkmode-back"
+    onMouseEnter={() => setLight(true)}
+    onMouseLeave={() => setLight(false)}
+  >
+    
     <div className="overlap-group">
+      {light && (<LightComponent />)}
     <div className="overlap">
+
       <div className="SAMUELSON-PAJEU">SAMUELSON.PAJEU&nbsp;&nbsp;&nbsp;&nbsp;GMAIL.COM</div>
       <div className="text-wrapper">@</div>
     </div>

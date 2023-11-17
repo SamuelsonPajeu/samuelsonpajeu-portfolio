@@ -1,4 +1,4 @@
-import { React, useState, useRef, useEffect } from "react";
+import { React, useRef, useEffect } from "react";
 import './App.css';
 
 // import FrontCard from './components/frontCard/FrontCard.js';
@@ -16,19 +16,16 @@ const getScaling = (scaledContent) => {
 
   const scale = `scale(${scaleAmtX}, ${scaleAmtY})`;
 
-  return scale
+  return scale;
 }
 
 const applyScaling = (scaledContent) => {
   scaledContent.style.transform = getScaling(scaledContent);
 };
 
-const applyTilt = (tiltedContent, mouseEvent, lightComponent) => {
+const applyTilt = (tiltedContent, mouseEvent, ) => {
   const innerX = mouseEvent.clientX - tiltedContent.offsetLeft;
   const innerY = mouseEvent.clientY - tiltedContent.offsetTop;
-  
-  lightComponent.style.left = innerX + "px";
-  lightComponent.style.top = innerY + "px";
 
   const x = tiltedContent.offsetWidth / 2;
   const y = tiltedContent.offsetHeight / 2;
@@ -49,12 +46,10 @@ const applyTilt = (tiltedContent, mouseEvent, lightComponent) => {
 
 function App() {
   const scaledContent = useRef();
-  const lightComponent = useRef();
-  const [light, setLight] = useState(false);
 
   function handleTilt(event){
-    if (lightComponent.current){
-      applyTilt(scaledContent.current, event, lightComponent.current);
+    if (scaledContent.current){
+      applyTilt(scaledContent.current, event);
     }
   }
 
@@ -87,15 +82,11 @@ function App() {
   return (
     <div className="App">
       <div ref={scaledContent}
-        onMouseEnter={() => setLight(true)}
-        onMouseLeave={() => setLight(false)}
         onMouseMove={(event) => handleTilt(event)}
         onMouseOut={() => handleMouseOut()}
       >
-
         {/* <FrontCard /> */}
         <BackCard  />
-        {light && (<span ref={lightComponent} className="light"></span>)}
       </div>
     </div>
   );
