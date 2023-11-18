@@ -51,6 +51,16 @@ const applyScaling = (scaledContent) => {
 function App() {
   const scaledContent = useRef();
   const [cardSide, setCardSide] = useState('front');
+  const [tiltX, setTiltX] = useState(undefined);
+  const [trackingOnWindow, setTrackingOnWindow] = useState(false);
+
+  function changeCardSide() {
+    cardSide === 'front' ? setCardSide('back') : setCardSide('front');
+    setTiltX(0);
+    setTimeout(function(){
+      setTiltX(undefined);
+    },100);
+  }
 
   // function handleTilt(event){
   //   if (scaledContent.current){
@@ -96,40 +106,46 @@ function App() {
           direction="row"
           justifyContent="space-between"
         >
-          {cardSide === 'back' && (
           <Grid item xs>
             <div className="flip-arrow-left-wrapper">
               <img className="app-img" alt="Flip Arrow Left" src="assets/img/flip-arrow.svg" 
                 onClick={() => {
-                  setCardSide('front');
+                  setTiltX(100);
+                  setTimeout(changeCardSide, 300);
                 }}
               />
             </div>
           </Grid>
-          )}
+
           <Grid item xs>
-            <div className="center-card">
+            <div className="center-card"
+              onMouseEnter={() => setTrackingOnWindow(true)}
+              onMouseLeave={() => setTrackingOnWindow(false)}
+            >
               <Tilt 
-                tiltReverse = {false}
-                tiltMaxAngleX = {10}
-                tiltMaxAngley = {5}
+                tiltMaxAngleX = {20}
+                tiltMaxAngley = {10}
+                trackOnWindow = {trackingOnWindow}
+                tiltAngleYManual={tiltX}
+
               >
                 {cardSide === 'front' &&(<FrontCard />)}
                 {cardSide === 'back' &&(<BackCard />)}
               </Tilt>
             </div>
           </Grid>
-          {cardSide === 'front' && (
+
             <Grid item xs>
               <div className="flip-arrow-right-wrapper">
                 <img className="app-img" alt="Flip Arrow Right" src="assets/img/flip-arrow.svg" 
                 onClick={() => {
-                  setCardSide('back');
+                  setTiltX(-100);
+                  setTimeout(changeCardSide, 300);
                 }}
                 />
               </div>
             </Grid>
-          )}
+
           
         </Grid>
         

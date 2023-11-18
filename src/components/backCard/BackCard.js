@@ -22,7 +22,7 @@ return (
           <div className="text-wrapper">@</div>
         </div>
         <div className="rectangle">
-          <img className="linkedin-circled" alt="Linkedin circled" src="assets/img/linkedin.svg" />
+          <img className="img" alt="Linkedin circled" src="assets/img/linkedin.svg" />
         </div>
         <div className="git-hub-wrapper">
           <img className="img" alt="Git hub" src="assets/img/github.svg" />

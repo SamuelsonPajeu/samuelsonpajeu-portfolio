@@ -7,6 +7,12 @@
   transform-style: preserve-3d;
 }
 
+.darkmode-back:hover {
+  border-color: #4e52b1;
+  border-style: solid;
+  border-width: 2px;
+}
+
 .darkmode-back .overlap-group {
   background-color: #161616;
   border-bottom-style: solid;
@@ -72,14 +78,6 @@
   overflow: hidden;
 }
 
-.darkmode-back .linkedin-circled {
-  height: 96px;
-  left: 9px;
-  position: absolute;
-  top: 11px;
-  width: 95px;
-}
-
 .darkmode-back .git-hub-wrapper {
   background-image: url(../../../public/assets/img/vector-2.svg);
   background-size: 100% 100%;
@@ -91,6 +89,8 @@
   overflow: hidden;
 }
 
+
+
 .darkmode-back .img {
   height: 90px;
   left: 15px;
@@ -98,6 +98,16 @@
   top: 15px;
   width: 90px;
   overflow: hidden;
+  transition: width 0.2s, height  0.2s, top  0.2s, left  0.2s;
+}
+
+.darkmode-back .img:hover {
+  cursor: pointer;
+  left: 10px;
+  top: 10px;
+  height: 100px;
+  width: 100px;
+  filter: invert(25%) sepia(69%) saturate(1150%) hue-rotate(213deg) brightness(92%) contrast(87%);
 }
 
 .darkmode-back .qr-code-wrapper {

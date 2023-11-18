@@ -7,11 +7,17 @@
   transform-style: preserve-3d;
 }
 
+.darkmode-front:hover {
+  border-color: #e1e1e1;
+  border-style: solid;
+  border-width: 2px;
+}
+
 .darkmode-front .overlap-group {
   height: 382px;
   position: relative;
-  
 }
+
 
 .darkmode-front .bottom-line {
   height: 74px;
