@@ -52,6 +52,7 @@ function App() {
   const scaledContent = useRef();
   const [cardSide, setCardSide] = useState('front');
   const [tiltX, setTiltX] = useState(undefined);
+  const [trackingOnWindow, setTrackingOnWindow] = useState(false);
 
   function changeCardSide() {
     cardSide === 'front' ? setCardSide('back') : setCardSide('front');
@@ -117,11 +118,14 @@ function App() {
           </Grid>
 
           <Grid item xs>
-            <div className="center-card">
+            <div className="center-card"
+              onMouseEnter={() => setTrackingOnWindow(true)}
+              onMouseLeave={() => setTrackingOnWindow(false)}
+            >
               <Tilt 
                 tiltMaxAngleX = {20}
                 tiltMaxAngley = {10}
-                trackOnWindow = {true}
+                trackOnWindow = {trackingOnWindow}
                 tiltAngleYManual={tiltX}
 
               >
