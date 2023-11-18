@@ -17,12 +17,12 @@ function FrontCard() {
       <div className="overlap-group">
         {light && (<LightComponent />)}
         <div className="background" />
-        <img className="bottom-line" alt="Bottom line" src="/assets/img/bottom-line-1.svg" />
-        <img className="upper-line" alt="Upper line" src="/assets/img/upper-line-1.svg" />
+        <img className="bottom-line" alt="Bottom line" src="/assets/img/bottom-line-1.svg" draggable="false" />
+        <img className="upper-line" alt="Upper line" src="/assets/img/upper-line-1.svg" draggable="false" />
         <div className="text-wrapper">FULL STACK DEVELOPER</div>
         <div className="div">SAMUELSON</div>
         <div className="text-wrapper-2">PAJEU</div>
-        <img className="bottom-icons" alt="Bottom icons" src="/assets/img/bottom-icons.svg" />
+        <img className="bottom-icons" alt="Bottom icons" src="/assets/img/bottom-icons.svg" draggable="false" />
         <WiredProfilePictureIcon className="wired-profile" />
       </div>
     </div>

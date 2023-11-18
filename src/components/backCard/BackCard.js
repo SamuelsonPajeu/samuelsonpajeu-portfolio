@@ -22,13 +22,13 @@ return (
           <div className="text-wrapper">@</div>
         </div>
         <div className="rectangle">
-          <img className="img" alt="Linkedin circled" src="assets/img/linkedin.svg" />
+          <img className="img" alt="Linkedin circled" src="assets/img/linkedin.svg" draggable="false" />
         </div>
         <div className="git-hub-wrapper">
-          <img className="img" alt="Git hub" src="assets/img/github.svg" />
+          <img className="img" alt="Git hub" src="assets/img/github.svg" draggable="false" />
         </div>
         <div className="qr-code-wrapper">
-          <img className="img" alt="Qr code" src="assets/img/view-more.svg" />
+          <img className="img" alt="Qr code" src="assets/img/view-more.svg" draggable="false" />
         </div>
       </div>
   </div>
