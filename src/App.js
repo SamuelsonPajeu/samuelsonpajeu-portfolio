@@ -73,6 +73,31 @@ function App() {
     },1);
   }
 
+  function setArrowOpacity(event, centerCard) {
+    if (!leftArrow.current || !rightArrow.current)
+      return;
+
+    const containerRect = centerCard.current.getBoundingClientRect();
+    const mouseX = event.clientX - containerRect.left;
+
+    const normalizedX = mouseX / containerRect.width;
+    const interpolatedX = (normalizedX - 0.5) * 2;
+    const threshold = 0.9;
+
+    if (!Math.withinRange(interpolatedX, -threshold, threshold)){
+      if(interpolatedX !== 0) {
+        const actualArrow = interpolatedX < 0 ? leftArrow : rightArrow;
+        const flipDirection = interpolatedX < 0 ? -1 : 1;
+
+        setOpacity(actualArrow.current, Math.lerp(threshold, 1, 0.1, 1, Math.abs(interpolatedX)));
+        setFlipingTo(flipDirection);
+      }
+    } else {
+      setOpacity(rightArrow.current, 0);
+      setOpacity(leftArrow.current, 0);
+      setFlipingTo(0);
+    }
+  }
   // function handleTilt(event){
   //   if (scaledContent.current){
   //     applyTilt(scaledContent.current, event);
@@ -106,61 +131,30 @@ function App() {
 
   return (
     <div className="App" >
-
       <div ref={scaledContent}
-        // onMouseMove={(event) => handleTilt(event)}
-        // onMouseOut={() => handleMouseOut()}
+        onMouseEnter={() => setTrackingOnWindow(true)}
+        onMouseLeave={() => {
+          setTrackingOnWindow(false)
+          setOpacity(rightArrow.current, 0);
+          setOpacity(leftArrow.current, 0);
+        }}
+        onMouseMove={(event) => {
+          if (centerCard.current)
+            setArrowOpacity(event, centerCard);
+        }}
+        onClick={() => {
+          if (flipingTo) {
+            setTiltX(flipingTo < 0 ? 100 : -100);
+            setTimeout(changeCardSide, 150);
+          }
+        }}
       >
 
         <div className="flip-arrow-left-wrapper" ref={leftArrow}>
           <img className="app-img" alt="Flip Arrow Left" src="assets/img/flip-arrow.svg" draggable="false" />
         </div>
-
         <div className="center-card" ref={centerCard}
-          onMouseEnter={() => setTrackingOnWindow(true)}
-          onMouseLeave={() => {
-            setTrackingOnWindow(false)
-            setOpacity(rightArrow.current, 0);
-            setOpacity(leftArrow.current, 0);
-          }}
-          onMouseMove={(event) => {
-            if (!centerCard.current)
-              return;
 
-            const containerRect = centerCard.current.getBoundingClientRect();
-            const mouseX = event.clientX - containerRect.left;
-
-            const normalizedX = mouseX / containerRect.width;
-            const interpolatedX = (normalizedX - 0.5) * 2;
-            console.log(interpolatedX);
-            const threshold = 0.8;
-
-            if (!Math.withinRange(interpolatedX, -threshold, threshold)){
-              if (interpolatedX < 0 && leftArrow.current) {
-                setOpacity(leftArrow.current, Math.lerp(threshold, 1, 0, 0.2, Math.abs(interpolatedX)));
-                setFlipingTo(-1);
-              }
-              else if (interpolatedX > 0 && rightArrow.current) {
-                setOpacity(rightArrow.current, Math.lerp(threshold, 1, 0, 0.2, interpolatedX));
-                setFlipingTo(1);
-              }
-            } else {
-              setOpacity(rightArrow.current, 0);
-              setOpacity(leftArrow.current, 0);
-              setFlipingTo(0);
-            }
-
-          }
-
-          }
-          onClick={() => {
-            console.log("clicou no card");
-            if (flipingTo) {
-              setTiltX(flipingTo < 0 ? 100 : -100);
-              setTimeout(changeCardSide, 150);
-            }
-          }}
-          onMouse
         >
           <Tilt 
             tiltMaxAngleX = {20}

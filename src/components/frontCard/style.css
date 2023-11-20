@@ -79,12 +79,46 @@
   cursor: default;
 }
 
+.darkmode-front .icon-label {
+  color: #4e52b1;
+  font-family: "Orbitron", Helvetica;
+  font-size: 13px;
+  font-weight: 400;
+  left: 302px;
+  letter-spacing: 0.2px;
+  line-height: normal;
+  position: absolute;
+  top: 300px;
+  white-space: nowrap;
+  width: 303px;
+  cursor: default;
+}
+
 .darkmode-front .bottom-icons {
   height: 29px;
   left: 30px;
   position: absolute;
   top: 332px;
   width: 575px;
+}
+
+.darkmode-front .bottom-icons-wrapper {
+  left: 30px;
+  top: 332px;
+  position: absolute;
+  display: flex;
+  gap: 32px;
+}
+
+.darkmode-front .bottom-icon {
+  height: 29px;
+  width: 29px;
+
+  transition: width 0.2s, height  0.2s, top  0.2s, left  0.2s;
+}
+.darkmode-front .bottom-icon:hover {
+  height: 35px;
+  width: 35px;
 }
 
 .darkmode-front .wired-profile {
