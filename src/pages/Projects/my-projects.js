@@ -20,7 +20,8 @@ function Projects() {
       setfilteredProjects(projectData);
       return;
     }
-    const _filterdProjects = projectData.filter(project => project.tag === type);
+    const _filterdProjects = projectData.filter(project => project.tag.includes(type));
+
     setfilteredProjects(_filterdProjects);
   }
 
