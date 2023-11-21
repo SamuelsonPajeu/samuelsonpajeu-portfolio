@@ -3,11 +3,15 @@ export const projectData = [
     name: "Scream",
     image: "https://variety.com/wp-content/uploads/2023/01/Screen-Shot-2023-01-19-at-9.11.55-AM-e1674137788386.png",
     tag: ["horror"],
+    code: "google.com",
+    external: "google.com",
+    download: "google.com",
   },
   {
     name: "D&D",
     image: "https://assets-prd.ignimgs.com/2022/12/05/dungeons-and-dragons-honor-among-thieves-button-1670258546313.jpg",
     tag: ["fantasy"],
+    download: "google.com",
   },
   {
     name: "Alan Wake",
@@ -20,10 +24,7 @@ export const projectData = [
     tag: ["action"],
   },
   {
-    name: "TEST",
-    image: "assets/img/projects/no-image.png",
+    name: "TEST AÇÃO/TERROR",
     tag: ["action", "horror"],
   },
-
-
 ];

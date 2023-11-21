@@ -75,7 +75,7 @@ function Projects() {
         <div className="frame">
           {
             filteredProjects.map((project) => (
-              <ProjectCard name={project.name} image={project.image} />
+              <ProjectCard name={project.name} data={project} image={project.image} />
             ))
           }
         </div>
