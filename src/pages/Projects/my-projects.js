@@ -1,8 +1,17 @@
-import React from "react";
+import { React, useState } from "react";
 import { Link } from 'react-router-dom'
 import "./projects.css";
 
+import ProjectCard from "../../components/projectCard/ProjectCard";
+import { projectData } from "../../components/projectCard/project-data";
+
 function Projects() {
+  const [filteredProjects, setfilteredProjects] = useState(projectData);
+
+  function filterProjectBy(type){
+    setfilteredProjects(projectData.filter(project => project.tag === type));
+  }
+
   return (
     <div className="index">
       <div  className="navbar">
@@ -31,17 +40,12 @@ function Projects() {
           </div>
         </div>
         <div className="frame">
-          <div className="project-card">
-            <p className="card-text-wrapper">Project Name</p>
-            <img className="primary-button" alt="Arrow button" src="assets/img/arrow-button.svg"
-            />
-            <img className="secondary-button" alt="Code button"  src="assets/img/code-button.svg"
-            />
-            <div className="image-frame" >
-              <img className="thumb-image" alt="Project" src="assets/img/projects/echo.png" />
-            </div>
-          </div>
-          
+          {
+            filteredProjects.map((project, index) => (
+              <ProjectCard name={project.name} image={project.image} />
+            ))
+          }
+          {/* <ProjectCard name="teste" /> */}
           
         </div>
       </div>

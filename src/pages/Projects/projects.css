@@ -3,8 +3,10 @@
   background-color: #161616;
   display: flex;
   flex-direction: column;
-  height: 1024px;
-  padding: 0px 25px;
+  min-height: 100vh;
+  height: 100%;
+  padding: 5px 25px;
+  padding-bottom: 20px;
   position: relative;
 }
 
@@ -168,9 +170,7 @@
   transition: filter 0.2s;
 }
 
-.index .frame:hover {
-  filter: brightness(1.15);
-}
+
 
 .index .project-card {
   background-color: #181818;
@@ -183,6 +183,12 @@
   margin-top: -2px;
   position: relative;
   width: 324px;
+
+  transition: filter 0.2s;
+}
+
+.index .project-card:hover {
+  filter: brightness(1.15);
 }
 
 .index .card-text-wrapper {
