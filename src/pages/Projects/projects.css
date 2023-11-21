@@ -9,10 +9,8 @@
 }
 
 .index .navbar {
-  align-self: stretch;
-  flex: 0 0 auto;
+  padding-top: 50px;
   position: relative;
-  width: 100%;
 }
 
 .index .page-description {
@@ -40,6 +38,15 @@
   position: relative;
   text-align: center;
   white-space: nowrap;
+}
+
+.text-wrapper *:is(a:link, a:visited) {
+  color: #4e52b1;
+  text-decoration: none;
+}
+
+.text-wrapper *:is(a:link, a:visited):hover {
+  filter: brightness(1.5);
 }
 
 .index .div {
@@ -85,17 +92,34 @@
   height: 50px;
   position: relative;
   width: 300px;
+  transition: filter 0.2s;
 }
 
-.index .ellipse {
-  height: 20px;
-  left: 12px;
+.index *:is(.option, .option-2):hover {
+  filter: brightness(1.25);
+}
+
+*:is(.option, .option-2) .ellipse {
+  height: 5px;
+  width: 5px;
+  left: 20px;
   position: absolute;
-  top: 15px;
-  width: 20px;
+  top: 19px;
+
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 3px;
 }
 
-.index .text-wrapper-2 {
+.option .ellipse {
+  border-color: #ffffff;
+}
+
+.option-2 .ellipse {
+  border-color: #2e2e2e;
+}
+
+.index .filter-text-wrapper {
   color: #ffffff;
   font-family: "Roboto Mono", Helvetica;
   font-size: 16px;
@@ -107,6 +131,7 @@
   position: absolute;
   top: 14px;
   width: 39px;
+  cursor: default;
 }
 
 .index .option-2 {
@@ -139,6 +164,12 @@
   gap: 30px 30px;
   padding: 0px 25px;
   position: relative;
+
+  transition: filter 0.2s;
+}
+
+.index .frame:hover {
+  filter: brightness(1.15);
 }
 
 .index .project-card {
@@ -154,7 +185,7 @@
   width: 324px;
 }
 
-.index .text-wrapper-4 {
+.index .card-text-wrapper {
   color: #ffffff;
   font-family: "Roboto Mono", Helvetica;
   font-size: 16px;
@@ -164,34 +195,63 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 196px;
+  top: 180px;
   width: 190px;
+
+  text-align: left;
+  cursor: default;
 }
 
-.index .arrow-button {
+.index .primary-button {
   height: 38px;
   left: 261px;
   position: absolute;
   top: 200px;
   width: 48px;
+  background-color: #2e2e2e;
+  border-radius: 4px;
+
+  cursor: pointer;
 }
 
-.index .code-button {
+.index .secondary-button {
   height: 38px;
   left: 203px;
   position: absolute;
   top: 200px;
   width: 48px;
+  background-color: #2e2e2e;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+.index :is(.primary-button, .secondary-button) {
+  transition: background-color 0.2s ease;
+}
+
+.index :is(.primary-button, .secondary-button):hover {
+  background-color: #4e52b1;
 }
 
 .index .image-frame {
-  background-color: #000000;
   border-radius: 10px;
   height: 181px;
-  left: 6px;
+  left: 8px;
   position: absolute;
   top: 5px;
   width: 308px;
+}
+
+.image-frame .thumb-image {
+  display: block;
+  width: 20vw;
+  height: 20vh;
+  max-width: 308px;
+  max-height: 181px;
+  min-width: 308px;
+  min-height: 181px;
+  object-fit: cover;
+  border-radius: 0.5em;
 }
 
 .index .project-card-2 {

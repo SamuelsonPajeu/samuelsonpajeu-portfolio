@@ -6,12 +6,11 @@ function Projects() {
   return (
     <div className="index">
       <div  className="navbar">
-      <Link to={"/"}>
-        <img
-          alt="Navbar"
-          src="https://cdn.animaapp.com/projects/64f90b7d3747336ba41c7348/releases/655c256bf1a1f77db0a7a713/img/navbar.svg"
-        />
-      </Link>
+      <p className="text-wrapper"> 
+        <Link to={"/"}>
+          ← Go back
+        </Link>
+      </p>
       </div>
       
       <div className="page-description">
@@ -23,51 +22,27 @@ function Projects() {
       <div className="projects-section">
         <div className="filter">
           <div className="option">
-            <img
-              className="ellipse"
-              alt="Ellipse"
-              src="https://cdn.animaapp.com/projects/64f90b7d3747336ba41c7348/releases/655c27dd347072f150c9d360/img/ellipse-1.png"
-            />
-            <div className="text-wrapper-2">All</div>
+            <div className="ellipse" />
+            <div className="filter-text-wrapper">All</div>
           </div>
           <div className="option-2">
-            <img
-              className="ellipse"
-              alt="Ellipse"
-              src="https://cdn.animaapp.com/projects/64f90b7d3747336ba41c7348/releases/655c27dd347072f150c9d360/img/ellipse-1-1.png"
-            />
-            <div className="text-wrapper-3">TEST</div>
+            <div className="ellipse" />
+            <div className="filter-text-wrapper">TEST</div>
           </div>
         </div>
         <div className="frame">
           <div className="project-card">
-            <p className="text-wrapper-4">Project Name Right Over Here</p>
-            <img
-              className="arrow-button"
-              alt="Arrow button"
-              src="https://cdn.animaapp.com/projects/64f90b7d3747336ba41c7348/releases/655c256bf1a1f77db0a7a713/img/arrow-button.svg"
+            <p className="card-text-wrapper">Project Name</p>
+            <img className="primary-button" alt="Arrow button" src="assets/img/arrow-button.svg"
             />
-            <img
-              className="code-button"
-              alt="Code button"
-              src="https://cdn.animaapp.com/projects/64f90b7d3747336ba41c7348/releases/655c256bf1a1f77db0a7a713/img/code-button.svg"
+            <img className="secondary-button" alt="Code button"  src="assets/img/code-button.svg"
             />
-            <div className="image-frame" />
+            <div className="image-frame" >
+              <img className="thumb-image" alt="Project" src="assets/img/projects/echo.png" />
+            </div>
           </div>
-          <div className="project-card-2">
-            <div className="text-wrapper-4">Project Name</div>
-            <img
-              className="arrow-button"
-              alt="Arrow button"
-              src="https://cdn.animaapp.com/projects/64f90b7d3747336ba41c7348/releases/655c256bf1a1f77db0a7a713/img/arrow-button.svg"
-            />
-            <img
-              className="code-button"
-              alt="Code button"
-              src="https://cdn.animaapp.com/projects/64f90b7d3747336ba41c7348/releases/655c256bf1a1f77db0a7a713/img/code-button.svg"
-            />
-            <div className="image-frame" />
-          </div>
+          
+          
         </div>
       </div>
     </div>
