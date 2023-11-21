@@ -7,10 +7,10 @@ function ProjectCard({
 }) {
   return <div className="project-card">
     <p className="card-text-wrapper">{name}</p>
-    <img className="primary-button" alt="Arrow button" src="assets/img/arrow-button.svg" />
-    <img className="secondary-button" alt="Code button" src="assets/img/code-button.svg" />
+    <img className="primary-button" alt="Arrow button" src="assets/img/arrow-button.svg" draggable="false" />
+    <img className="secondary-button" alt="Code button" src="assets/img/code-button.svg" draggable="false" />
     <div className="image-frame">
-      <img className="thumb-image" alt="Project" src={image} />
+      <img className="thumb-image" alt="Project" src={image} draggable="false" />
     </div>
   </div>;
 }
