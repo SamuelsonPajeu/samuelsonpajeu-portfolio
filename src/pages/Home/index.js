@@ -26,6 +26,12 @@ function Home() {
     },1);
   }
 
+  function disableArrowsVisibility() {
+    utils.setOpacity(rightArrow.current, 0);
+    utils.setOpacity(leftArrow.current, 0);
+    setFlipingTo(0);
+  }
+
   function setArrowOpacity(event, centerCard) {
     if (!leftArrow.current || !rightArrow.current)
       return;
@@ -46,9 +52,7 @@ function Home() {
         setFlipingTo(flipDirection);
       }
     } else {
-      utils.setOpacity(rightArrow.current, 0);
-      utils.setOpacity(leftArrow.current, 0);
-      setFlipingTo(0);
+      disableArrowsVisibility();
     }
   }
 
@@ -73,8 +77,7 @@ function Home() {
       onMouseEnter={() => setTrackingOnWindow(true)}
       onMouseLeave={() => {
         setTrackingOnWindow(false)
-        utils.setOpacity(rightArrow.current, 0);
-        utils.setOpacity(leftArrow.current, 0);
+        disableArrowsVisibility();
       }}
       onMouseMove={(event) => {
         if (centerCard.current)

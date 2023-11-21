@@ -5,13 +5,15 @@ import "./projects.css";
 function Projects() {
   return (
     <div className="index">
+      <div  className="navbar">
       <Link to={"/"}>
         <img
-          className="navbar"
           alt="Navbar"
           src="https://cdn.animaapp.com/projects/64f90b7d3747336ba41c7348/releases/655c256bf1a1f77db0a7a713/img/navbar.svg"
         />
       </Link>
+      </div>
+      
       <div className="page-description">
         <p className="text-wrapper">My personal projects lovely page.</p>
         <p className="div">
