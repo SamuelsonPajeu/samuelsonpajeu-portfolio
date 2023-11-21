@@ -1,5 +1,6 @@
 
 import { React, useState } from "react";
+import { Link } from 'react-router-dom'
 import "./style.css";
 
 import LightComponent from '../light/lightComponent.js';
@@ -39,9 +40,11 @@ return (
           <img className="img" alt="Git hub" src="assets/img/github.svg" draggable="false" />
         </div>
 
-        <div className="qr-code-wrapper">
-          <img className="img" alt="Qr code" src="assets/img/view-more.svg" draggable="false" />
-        </div>
+        <Link to={"/projects"}>
+          <div className="qr-code-wrapper">
+            <img className="img" alt="Qr code" src="assets/img/view-more.svg" draggable="false" />
+          </div>
+        </Link>
       </div>
   </div>
   );

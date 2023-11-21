@@ -14,3 +14,8 @@
   font-family: 'Orbitron';
   src: local('Orbitron'), url(./fonts/Orbitron/Orbitron-Regular.ttf) format('truetype');
 }
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: local('RobotoMono'), url(./fonts/RobotoMono/RobotoMono-Regular.ttf) format('truetype');
+}
