@@ -8,10 +8,14 @@ import { projectData } from "../../components/projectCard/project-data";
 import FilterComponent from "../../components/projectFilter/FilterComponent";
 import { filterData } from "../../components/projectFilter/filter-data";
 
+import PopUpComponent from "../../components/projectPopup/projectPopup";
+
 function Projects() {
   const [filteredProjects, setfilteredProjects] = useState(projectData);
   const [filterList, setFilterList] = useState(filterData);
   const [lastSelected, setLastSelected] = useState(0);
+  const [popUpOpen, setPopUpOpen] = useState(false);
+  const [actualOpenProject, setActualOpenProject] = useState({});
 
   const navigate = useNavigate();
 
@@ -37,6 +41,28 @@ function Projects() {
     setFilterList(_filter);
   }
 
+  function closePopUp() {
+    setActualOpenProject({});
+    setPopUpOpen(false);
+  }
+
+  function getPopUpComponent() {
+    const project = actualOpenProject;
+
+    return (
+      <PopUpComponent 
+        title={project.name}
+        image={project.image}
+        description={project.description}
+        external={project.external}
+        code={project.code}
+        download={project.download}
+        tags={project.tag}
+        callback={closePopUp}
+      />
+    );
+  }
+
   return (
     <div className="index">
       <div  className="navbar"
@@ -59,30 +85,7 @@ function Projects() {
         </p>
       </div>
 
-      <div className="project-popup">
-        <div className="project-card-popup-bg"/>
-        <div className="project-card-popup">
-
-          <div className="card-text-wrapper-popup-title">
-            <p>
-              Title.
-            </p>
-          </div>
-
-          <div className="image-frame-popup">
-            <img className="thumb-image-popup" alt="Project" src={"assets/img/projects/no-image.png"} draggable="false" />
-          </div>
-
-          <div className="card-text-wrapper-popup-description">
-            <p>
-              Test.
-            </p>
-          </div>
-          <div className="popup-buttons">
-            <img className="primary-button-popup download" alt="Download button" src="assets/img/download-button.svg" draggable="false" />
-          </div>
-        </div>
-      </div>
+      { popUpOpen && (getPopUpComponent("a"))}
 
       <div className="projects-section">
         <div className="filter" >
@@ -100,7 +103,15 @@ function Projects() {
         <div className="frame">
           {
             filteredProjects.map((project) => (
-              <ProjectCard name={project.name} data={project} image={project.image} />
+              <div className="project"
+                onClick={() => {
+                  setActualOpenProject(project);
+                  setPopUpOpen(true);
+                }}
+              >
+                <ProjectCard name={project.name} data={project} image={project.image} />
+              </div>
+              
             ))
           }
         </div>
@@ -110,4 +121,5 @@ function Projects() {
 };
 
 export default Projects;
+
 
