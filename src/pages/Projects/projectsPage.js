@@ -59,6 +59,31 @@ function Projects() {
         </p>
       </div>
 
+      <div className="project-popup">
+        <div className="project-card-popup-bg"/>
+        <div className="project-card-popup">
+
+          <div className="card-text-wrapper-popup-title">
+            <p>
+              Title.
+            </p>
+          </div>
+
+          <div className="image-frame-popup">
+            <img className="thumb-image-popup" alt="Project" src={"assets/img/projects/no-image.png"} draggable="false" />
+          </div>
+
+          <div className="card-text-wrapper-popup-description">
+            <p>
+              Test.
+            </p>
+          </div>
+          <div className="popup-buttons">
+            <img className="primary-button-popup download" alt="Download button" src="assets/img/download-button.svg" draggable="false" />
+          </div>
+        </div>
+      </div>
+
       <div className="projects-section">
         <div className="filter" >
           {

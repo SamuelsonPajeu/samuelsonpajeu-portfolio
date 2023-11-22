@@ -23,8 +23,4 @@ export const projectData = [
     image: "https://fr.web.img6.acsta.net/pictures/23/09/20/16/33/4604785.jpg",
     tag: ["action"],
   },
-  {
-    name: "TEST AÇÃO/TERROR",
-    tag: ["action", "horror"],
-  },
 ];

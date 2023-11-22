@@ -6,7 +6,8 @@ function ProjectCard({
   image = "assets/img/projects/no-image.png",
   data = {}
 }) {
-  return <div className="project-card">
+  return (
+  <div className="project-card">
     <p className="card-text-wrapper">{name}</p>
     {data.external && (
       <img className="primary-button" alt="Arrow button" src="assets/img/arrow-button.svg" draggable="false" />
@@ -23,7 +24,8 @@ function ProjectCard({
     <div className="image-frame">
       <img className="thumb-image" alt="Project" src={image} draggable="false" />
     </div>
-  </div>;
+  </div>
+  );
 }
 
 ProjectCard.propTypes = {
