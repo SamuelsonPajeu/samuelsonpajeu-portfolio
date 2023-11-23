@@ -1,0 +1,30 @@
+.tag-component {
+  background-color: #424242;
+
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+
+  /* min-width: 50px; */
+  /* width: max-content + 100px; */
+
+  text-align: center;
+  align-items: center;
+
+  border-radius: 5px;
+
+}
+
+.tag-text {
+  font-family: "Roboto Mono", Helvetica;
+
+  text-align: center;
+  word-wrap: break-word;
+
+  color: grey;
+  font-size: 12px;
+
+
+
+}

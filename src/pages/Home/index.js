@@ -26,6 +26,12 @@ function Home() {
     },1);
   }
 
+  function disableArrowsVisibility() {
+    utils.setOpacity(rightArrow.current, 0);
+    utils.setOpacity(leftArrow.current, 0);
+    setFlipingTo(0);
+  }
+
   function setArrowOpacity(event, centerCard) {
     if (!leftArrow.current || !rightArrow.current)
       return;
@@ -35,20 +41,18 @@ function Home() {
 
     const normalizedX = mouseX / containerRect.width;
     const interpolatedX = (normalizedX - 0.5) * 2;
-    const threshold = 0.9;
+    const threshold = 0.85;
 
     if (!mathUtils.withinRange(interpolatedX, -threshold, threshold)){
       if(interpolatedX !== 0) {
         const actualArrow = interpolatedX < 0 ? leftArrow : rightArrow;
         const flipDirection = interpolatedX < 0 ? -1 : 1;
 
-        utils.setOpacity(actualArrow.current, mathUtils.lerp(threshold, 1, 0.35, 1, Math.abs(interpolatedX)));
+        utils.setOpacity(actualArrow.current, mathUtils.lerp(threshold, 1, 0.1, 1, Math.abs(interpolatedX)));
         setFlipingTo(flipDirection);
       }
     } else {
-      utils.setOpacity(rightArrow.current, 0);
-      utils.setOpacity(leftArrow.current, 0);
-      setFlipingTo(0);
+      disableArrowsVisibility();
     }
   }
 
@@ -73,8 +77,7 @@ function Home() {
       onMouseEnter={() => setTrackingOnWindow(true)}
       onMouseLeave={() => {
         setTrackingOnWindow(false)
-        utils.setOpacity(rightArrow.current, 0);
-        utils.setOpacity(leftArrow.current, 0);
+        disableArrowsVisibility();
       }}
       onMouseMove={(event) => {
         if (centerCard.current)

@@ -1,0 +1,71 @@
+.tags-wrapper {
+  width: 95%;
+
+  position: relative;
+
+  margin-top: 2%;
+
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  gap: 1%;
+
+  align-items: flex-start;
+
+}
+
+.closeable {
+  scale: 1.25;
+  margin-left: auto;
+  cursor: pointer!important;
+}
+
+.closeable:hover {
+  filter: brightness(1.25);
+
+}
+
+
+.popup-buttons-wrapper {
+  width: 95%;
+
+  position: relative;
+
+  margin-bottom: 2%;
+
+  display: flex;
+
+  flex-direction: row-reverse;
+
+  align-items: center;
+
+  gap: 2%;
+}
+
+.button-popup-wrapper {
+
+  background-color: #424242;
+
+  display: flex;
+  align-items: center;
+
+  flex-direction: row-reverse;
+
+  padding-left: 5px;
+  padding-right: 15px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+}
+
+.button-popup-wrapper:hover {
+  cursor: pointer;
+  filter: brightness(1.25);
+}
+
+.button-popup-text {
+  color: #ffffff;
+
+  font-family: "Roboto Mono", Helvetica;
+
+  text-align: center;
+} 

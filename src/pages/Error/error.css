@@ -1,0 +1,42 @@
+.Error {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: #4e52b1;
+  font-family: "Orbitron", Helvetica;
+  font-size: 36px;
+  letter-spacing: 8px;
+  line-height: normal;
+  text-align: center;
+
+  cursor: default;
+}
+
+.subtitle {
+  color: #4e52b1;
+  font-family: "Orbitron", Helvetica;
+  font-size: 26px;
+  letter-spacing: 8px;
+  line-height: normal;
+  text-align: center;
+
+  cursor: default;
+}
+
+.message {
+  color: #e1e1e1;
+  font-family: "Orbitron", Helvetica;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: normal;
+  text-align: center;
+
+  cursor: default;
+}
