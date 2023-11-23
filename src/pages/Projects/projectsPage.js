@@ -46,8 +46,7 @@ function Projects() {
     setPopUpOpen(false);
   }
 
-  function getPopUpComponent() {
-    const project = actualOpenProject;
+  function getPopUpComponent(project) {
 
     return (
       <PopUpComponent 
@@ -85,7 +84,7 @@ function Projects() {
         </p>
       </div>
 
-      { popUpOpen && (getPopUpComponent("a"))}
+      { popUpOpen && (getPopUpComponent(actualOpenProject))}
 
       <div className="projects-section">
         <div className="filter" >
