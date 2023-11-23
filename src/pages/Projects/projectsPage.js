@@ -104,9 +104,11 @@ function Projects() {
           {
             filteredProjects.map((project) => (
               <div className="project"
-                onClick={() => {
-                  setActualOpenProject(project);
-                  setPopUpOpen(true);
+                onClick={(event) => {
+                  if(event.target.id !== "button"){
+                    setActualOpenProject(project);
+                    setPopUpOpen(true);
+                  }
                 }}
               >
                 <ProjectCard name={project.name} data={project} image={project.image} />

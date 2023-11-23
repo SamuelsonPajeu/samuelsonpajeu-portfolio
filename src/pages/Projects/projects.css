@@ -64,7 +64,7 @@
   align-self: stretch;
   display: flex;
   flex: 0 0 auto;
-  gap: 21px;
+  gap: 30px;
   position: relative;
   width: 100%;
 }
@@ -128,8 +128,7 @@
   line-height: normal;
   position: absolute;
   top: 14px;
-  width: 39px;
-  cursor: default;
+  width: 100%;
 }
 
 .index .option-2 {
@@ -160,7 +159,7 @@
   flex-grow: 1;
   flex-wrap: wrap;
   gap: 30px 30px;
-  padding: 0px 25px;
+  padding: 0px 0px;
   position: relative;
 
   transition: filter 0.2s;
@@ -314,7 +313,7 @@
 *:is(.card-text-wrapper-popup-title, .card-text-wrapper-popup-description) {
   font-family: "Roboto Mono", Helvetica;
 
-  width: 100%;
+  width: 95%;
 
   text-align: center;
   word-wrap: break-word;
@@ -329,6 +328,7 @@
 }
 
 .card-text-wrapper-popup-description {
+  white-space: pre-line;
   color: #ffffff;
   font-size: 16px;
 }

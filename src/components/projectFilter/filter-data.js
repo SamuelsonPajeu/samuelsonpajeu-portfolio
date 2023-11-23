@@ -5,16 +5,36 @@ export const filterData = [
         selected: true,
     },
     {
-        name: "Terror",
-        filterBy: "horror"
+        name: "Front End",
+        filterBy: "front",
     },
     {
-        name: "Ação/Aventura",
-        filterBy: "action"
+        name: "Back End",
+        filterBy: "back",
     },
     {
-        name: "Fanstasia",
-        filterBy: "fantasy"
+        name: "Games",
+        filterBy: "games",
+    },
+    {
+        name: "Python",
+        filterBy: "python",
+    },
+    {
+        name: "JavaScript",
+        filterBy: "javascript",
+    },
+    {
+        name: "Go Lang",
+        filterBy: "go",
+    },
+    {
+        name: "Dart/Flutter",
+        filterBy: "dart",
+    },
+    {
+        name: "C#",
+        filterBy: "c#",
     },
 
 ]
