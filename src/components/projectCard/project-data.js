@@ -3,7 +3,9 @@ export const projectData = [
     name: "Contact Card",
     image: "assets/img/projects/contact-card.png",
     tag: ["front", "react", "javascript"],
-    description: "TODO",
+    description: `My interactive digital business card. Built in React to highlight my personal projects.
+
+    P.S.: This is where you're looking at right now.`,
     code: "https://github.com/SamuelsonPajeu/portifolio-card",
     external: "/"
   },
@@ -11,15 +13,28 @@ export const projectData = [
     name: "Echo IO",
     image: "assets/img/projects/echo-io.png",
     tag: ["games", "socket-io", "front", "back", "javascript"],
-    description: "TODO",
+    description: `A newer version of one of my oldest projects. This version adds online multiplayer functionality, allowing players to compete against each other.
+    The game logic is handled by the server, which ensures fairness and consistency for all players.
+    Players can connect to a game either automatically or manually, using the room ID.
+
+    About the game:
+    You can choose between three available ships, each with a unique special feature.
+    Control your ship with the arrow keys and press Space to shoot.
+    `,
     code: "https://github.com/SamuelsonPajeu/Echo.io",
     external: "https://echoio.netlify.app/"
   },
   {
     name: "HTTP Status Foxes",
     image: "assets/img/projects/http-foxes.png",
-    tag: ["front", "back", "javascript", "go"],
-    description: "TODO",
+    tag: ["front", "back", "javascript", "go", "sqlite"],
+    description: `A simple REST API created in GO that returns HTTP statuses with funny fox images.
+
+    The website is a demo and consumes the API to build the items, which in turn stores the items in SQLite.
+    
+    The API can be integrated into other projects.
+    
+    Inspired by the well-known HTTP CATS.`,
     code: "https://github.com/search?q=owner%3ASamuelsonPajeu+foxes&type=repositories",
     external: "https://httpfoxes.netlify.app"
   },
@@ -51,7 +66,15 @@ export const projectData = [
     name: "Apolo Music Bot",
     image: "assets/img/projects/apolo-bot.png",
     tag: ["back", "python", "discord-api"],
-    description: "TODO",
+    description: `One of the first projects I did while I was learning Python.
+
+    It is possible to search for a song on YouTube by its name or direct URL, and the bot plays it for everyone in the room.
+    The bot also has queries to control the order of the songs, and it also has integration with Genius to search for the lyrics of the current song.
+    
+    [DEPRECATED]
+    
+    Unfortunately, due to changes in the Discord API and especially in the YouTube terms of service, the bot no longer works and cannot be updated to work the way it was designed.
+    Still, it was a fun project for learning and it ensured good times with friends.`,
     external: "https://discord.com/oauth2/authorize?client_id=892020683473821766&permissions=3344448&scope=bot",
     code: "https://github.com/SamuelsonPajeu/Discord-Music-Bot"
   },
@@ -59,14 +82,24 @@ export const projectData = [
     name: "The Possession",
     image: "assets/img/projects/the-possesion.png",
     tag: ["games", "unity", "c#"],
-    description: `TODO`,
+    description: `A challenge to myself where I made a project in just 1 day, from art to programming (Like a personal Game Jam).
+
+    It is a local multiplayer game where one player controls a killer who can project their soul into other bodies and the other controls a survivor that must find 3 keys in the chests scattered around the map to try to escape.
+    
+    Controls:
+    W,A,S,D: Control the killer
+    Arrow keys: Control the survivor`,
     download: "https://drive.google.com/file/d/1IPPX9Ciez4wdpbywgtiC4vkYbgmw9piT/view?usp=sharing",
   },
   {
     name: "Brazil 2024",
     image: "assets/img/projects/brazil-2024.png",
     tag: ["games", "unity", "c#"],
-    description: `HONG KONG 97`,
+    description: `A parody of the NES game: HONG KONG 97 using Brazilian elements.
+
+    Controls:
+    Arrow keys: Move the character
+    Space: Shoot`,
     external: "https://simmer.io/@Hamsterking/brazil-2024",
   },
   {
@@ -84,12 +117,21 @@ export const projectData = [
     Esc: Pause the game`,
     external: "https://gamejolt.com/games/shine_one/357205",
   },
+  // {
+  //   name: "Cromet",
+  //   image: "assets/img/projects/cromet.png",
+  //   tag: ["games", "unity", "c#"],
+  //   description: "TODO",
+  //   external: "https://youtu.be/wDcQv94EY9Y?list=PLPUcSS-EJoLlv-Rf4Z455YADGpY1vkFyu",
+  // },
   {
-    name: "Cromet",
-    image: "assets/img/projects/cromet.png",
-    tag: ["games", "unity", "c#"],
-    description: "TODO",
-    external: "https://youtu.be/wDcQv94EY9Y?list=PLPUcSS-EJoLlv-Rf4Z455YADGpY1vkFyu",
+    name: "A Thousand Spikes",
+    image: "assets/img/projects/ats.png",
+    tag: ["games", "monogame", "c#"],
+    description: `A simple game made with MonoGame.
+
+    In it, you can choose a character and you must survive as long as you can from falling spikes.`,
+    external: "https://play.google.com/store/apps/details?id=com.samuelsonpajeu.momentum",
   },
   {
     name: "Echo",

@@ -53,9 +53,7 @@ function PopUpComponent({
       </div>
 
       <div className="card-text-wrapper-popup-description">
-        <p>
           {description}
-        </p>
       </div>
 
       <div className="popup-buttons-wrapper">
