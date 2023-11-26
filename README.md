@@ -1,4 +1,5 @@
 # Samuelson Pajeu Portfolio
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3a8972fb-046d-4a59-ba25-44ec2a825e0e/deploy-status)](https://app.netlify.com/sites/samuelsonpajeu/deploys)
 
 This is a project built with React to showcase my personal applications .
 
