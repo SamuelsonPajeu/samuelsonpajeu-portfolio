@@ -116,10 +116,6 @@
 
   transition: width 0.2s, height  0.2s, top  0.2s, left  0.2s;
 }
-.darkmode-front .bottom-icon:hover {
-  height: 35px;
-  width: 35px;
-}
 
 .darkmode-front .wired-profile {
   height: 158px;
