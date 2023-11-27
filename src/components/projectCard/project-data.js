@@ -10,6 +10,14 @@ export const projectData = [
     external: "/"
   },
   {
+    name: "Render Dashboard Badges",
+    image: "assets/img/projects/render.png",
+    tag: ["back", "spring-boot", "java"],
+    description: `An API that retrieve the last deploy from Render Dashboard as a status badge to use on README files`,
+    code: "https://github.com/SamuelsonPajeu/render-badge",
+    external: "https://render-badge-samuelsonpajeu.onrender.com/swagger-ui/index.html",
+  },
+  {
     name: "Echo IO",
     image: "assets/img/projects/echo-io.png",
     tag: ["games", "socket-io", "front", "back", "javascript"],

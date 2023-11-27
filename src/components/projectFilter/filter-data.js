@@ -21,6 +21,10 @@ export const filterData = [
         filterBy: "python",
     },
     {
+        name: "Java",
+        filterBy: "java",
+    },
+    {
         name: "JavaScript",
         filterBy: "javascript",
     },
