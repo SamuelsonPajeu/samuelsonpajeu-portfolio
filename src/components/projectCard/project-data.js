@@ -1,5 +1,13 @@
 export const projectData = [
   {
+    name: "Snake Game",
+    image: "assets/img/projects/snake.png",
+    tag: ["python", "pygame", "games"],
+    description: `A simple snake game build after one leetcode challenge`,
+    code: "https://github.com/SamuelsonPajeu/snake-game",
+    external: "https://github.com/SamuelsonPajeu/snake-game"
+  },
+  {
     name: "Contact Card",
     image: "assets/img/projects/contact-card.png",
     tag: ["front", "react", "javascript"],
