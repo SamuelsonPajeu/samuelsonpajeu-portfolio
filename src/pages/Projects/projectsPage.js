@@ -1,5 +1,5 @@
-import { React, useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { React, useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import "./projects.css";
 
 import ProjectCard from "../../components/projectCard/ProjectCard";
@@ -11,15 +11,34 @@ import { filterData } from "../../components/projectFilter/filter-data";
 import PopUpComponent from "../../components/projectPopup/projectPopup";
 
 function Projects() {
-  const [filteredProjects, setfilteredProjects] = useState(projectData);
   const [filterList, setFilterList] = useState(filterData);
   const [lastSelected, setLastSelected] = useState(0);
   const [popUpOpen, setPopUpOpen] = useState(false);
+  const [filteredProjects, setfilteredProjects] = useState(projectData);
   const [actualOpenProject, setActualOpenProject] = useState({});
+
+  const [searchParams, setSearchParams] = useSearchParams({  })
+  const filter = searchParams.get("filter")
+  const project = searchParams.get("project")
 
   const navigate = useNavigate();
 
+  function deleteAndClearSearchParams(paramToDelete) {
+    searchParams.delete(paramToDelete);
+    const newParams = {};
+    searchParams.forEach((value, key) => {
+        newParams[key] = value;
+    });
+
+    setSearchParams(newParams, { replace: true});
+  }
+
   function filterProjectBy(type){
+    setSearchParams(params => {
+      params.set("filter", type);
+      return params;
+    }, { replace: true });
+
     if (type === "*") {
       setfilteredProjects(projectData);
       return;
@@ -42,6 +61,7 @@ function Projects() {
   }
 
   function closePopUp() {
+    deleteAndClearSearchParams("project");
     setActualOpenProject({});
     setPopUpOpen(false);
   }
@@ -61,6 +81,26 @@ function Projects() {
       />
     );
   }
+
+  function setFilter(){
+    if (filter) {
+      filterProjectBy(filter);
+      setFilterIndex(filterData.findIndex(f => f.filterBy === filter));
+    }
+  }
+
+  function setProject() {
+    if(project) {
+      setActualOpenProject(filteredProjects.find((p) => p.name === project));
+      setPopUpOpen(true);
+    }
+  }
+
+  useEffect(() => {
+    setFilter();
+    setProject();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className="index">
@@ -105,6 +145,12 @@ function Projects() {
               <div className="project"
                 onClick={(event) => {
                   if(event.target.id !== "button"){
+
+                    setSearchParams(params => {
+                      params.set("project", project.name);
+                      return params;
+                    }, { replace: true });
+
                     setActualOpenProject(project);
                     setPopUpOpen(true);
                   }
