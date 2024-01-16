@@ -3,10 +3,10 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import "./projects.css";
 
 import ProjectCard from "../../components/projectCard/ProjectCard";
-import { projectData } from "../../components/projectCard/project-data";
+import { projectData, uniqueTagsList } from "../../components/projectCard/project-data";
 
 import FilterComponent from "../../components/projectFilter/FilterComponent";
-import { filterData } from "../../components/projectFilter/filter-data";
+import { filterData, filterByList } from "../../components/projectFilter/filter-data";
 
 import PopUpComponent from "../../components/projectPopup/projectPopup";
 
@@ -17,10 +17,10 @@ function Projects() {
   const [filteredProjects, setfilteredProjects] = useState(projectData);
   const [actualOpenProject, setActualOpenProject] = useState({});
 
-  const [searchParams, setSearchParams] = useSearchParams({  })
+  const [searchParams, setSearchParams] = useSearchParams({})
   const filter = searchParams.get("filter")
   const project = searchParams.get("project")
-
+  
   const navigate = useNavigate();
 
   function deleteAndClearSearchParams(paramToDelete) {
@@ -84,8 +84,11 @@ function Projects() {
 
   function setFilter(){
     if (filter) {
-      filterProjectBy(filter);
-      setFilterIndex(filterData.findIndex(f => f.filterBy === filter));
+      if (uniqueTagsList.includes(filter))
+        filterProjectBy(filter);
+      
+      if (filterByList.includes(filter))
+        setFilterIndex(filterData.findIndex(f => f.filterBy === filter));
     }
   }
 

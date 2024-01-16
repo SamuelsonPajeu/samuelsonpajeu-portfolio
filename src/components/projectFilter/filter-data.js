@@ -40,5 +40,13 @@ export const filterData = [
         name: "C#",
         filterBy: "c#",
     },
-
 ]
+
+const uniqueTags = new Set();
+
+filterData.forEach(obj => {
+    uniqueTags.add(obj.filterBy);
+});
+
+
+export const filterByList = Array.from(uniqueTags);

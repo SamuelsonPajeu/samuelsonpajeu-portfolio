@@ -191,3 +191,13 @@ export const projectData = [
     download: "https://drive.google.com/file/d/1t7CzshrlOcyxJvS-pPzHjnabysvg9MXX/view?usp=sharing",
   },
 ];
+
+const uniqueTags = new Set();
+
+projectData.forEach(obj => {
+  obj.tag.forEach(tag => {
+    uniqueTags.add(tag);
+  });
+});
+
+export const uniqueTagsList = Array.from(uniqueTags);
