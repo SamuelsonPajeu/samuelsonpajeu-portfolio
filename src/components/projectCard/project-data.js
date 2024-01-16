@@ -1,5 +1,13 @@
 export const projectData = [
   {
+    name: "Just Chat",
+    image: "assets/img/projects/jc.png",
+    tag: ["front", "back", "dart", "flutter", "firebase"],
+    description: "A simple chat system using Firebase to auth and database",
+    code: "https://github.com/SamuelsonPajeu/just_chat",
+    external: "https://drive.google.com/drive/folders/1m2ubCCtJWqoFJqFpv7cSRTViVm3zlKCu?usp=sharing"
+  },
+  {
     name: "Snake Game",
     image: "assets/img/projects/snake.png",
     tag: ["python", "pygame", "games"],
